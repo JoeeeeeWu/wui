@@ -1,9 +1,13 @@
 import './styles/index.scss';
 
-import { Button } from './components/button';
+import {
+  Button,
+  ButtonGroup,
+} from './components/button';
 
 const components = [
   Button,
+  ButtonGroup,
 ];
 
 const install = (Vue) => {
