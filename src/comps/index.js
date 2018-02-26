@@ -1,20 +1,21 @@
 import './styles/index.scss';
 
-import {
-  Button,
-  ButtonGroup,
-} from './components/button';
+import Button from './components/button';
+import GlobalModal from './components/globalmodal/index';
 
-const components = [
+const components = {
   Button,
-  ButtonGroup,
-];
+  ButtonGroup: Button.group,
+};
 
 const install = (Vue) => {
   if (install.installed) return;
-  components.map(component => Vue.component(component.name, component));
+  // components.map(component => Vue.component(component.name, component));
+  Object.keys(components).forEach((key) => {
+    Vue.component(components[key].name, components[key]);
+  });
 
-  // Vue.prototype.$modal = GlobalModal;
+  Vue.prototype.$modal = GlobalModal; // eslint-disable-line
   // Vue.prototype.$toast = Toast;
 };
 

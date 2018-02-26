@@ -7,7 +7,12 @@
           <strong class="w__dialog--title" v-if="title">{{title}}</strong>
         </div>
         <div class="w__dialog--bd" v-if="type=='prompt'">
-          <w-input v-model="promptValue" :placeholder="placeholder" :readonly="readonly" class="w__dialog--bd-input"></w-input>
+          <w-input
+            v-model="promptValue"
+            :placeholder="placeholder"
+            :readonly="readonly"
+            class="w__dialog--bd-input"
+          ></w-input>
         </div>
         <div class="w__dialog--bd" v-else>
           {{content}}
@@ -39,7 +44,9 @@
 <script>
 import wButton from '../button';
 import wButtonGroup from '../buttongroup';
+
 import ModalMixin from './ModalMixin';
+
 export default {
   mixins: [ModalMixin],
   components: {
@@ -80,7 +87,7 @@ export default {
     callBack: {
       type: Function,
       default() {},
-    }
+    },
   },
   data() {
     return {

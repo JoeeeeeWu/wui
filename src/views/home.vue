@@ -15,12 +15,23 @@
         <w-button type="success">成功</w-button>
       </w-button-group>
     </div>
+    <div class="section">
+      <w-button @click="alert">alert</w-button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    alert() {
+      this.$modal.alert({
+        title: '提示',
+        content: '我是actionsheet弹出来的',
+        color: '#19be6b',
+      });
+    },
+  },
 };
 </script>
 
