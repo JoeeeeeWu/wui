@@ -22,4 +22,16 @@ export default {
     const propsData = Object.assign({}, defaultOpts, opts);
     return open(propsData);
   },
+  confirm(opts) {
+    const defaultOpts = {
+      title: '',
+      content: '',
+      type: 'confirm',
+      maskClosable: true,
+      color: '',
+      callBack() { },
+    };
+    const propsOpts = Object.assign(defaultOpts, opts);
+    return open(propsOpts);
+  },
 };

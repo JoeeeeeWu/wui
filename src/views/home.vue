@@ -17,6 +17,7 @@
     </div>
     <div class="section">
       <w-button @click="alert">alert</w-button>
+      <w-button @click="confirm">confirm</w-button>
     </div>
   </div>
 </template>
@@ -28,6 +29,13 @@ export default {
       this.$modal.alert({
         title: '提示',
         content: '我是actionsheet弹出来的',
+        color: '#19be6b',
+      });
+    },
+    confirm() {
+      this.$modal.confirm({
+        title: '提示',
+        content: '你想怎么样呢？',
         color: '#19be6b',
       });
     },
