@@ -63,6 +63,11 @@ export default {
   watch: {
     value(val) {
       this.isShow = val;
+      if (val) {
+        document.body.classList.add('w--overflow--hidden');
+      } else {
+        document.body.classList.remove('w--overflow--hidden');
+      }
     },
   },
 };
