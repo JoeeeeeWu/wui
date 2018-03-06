@@ -2,10 +2,12 @@ import './styles/index.scss';
 
 import Button from './components/button';
 import GlobalModal from './components/globalmodal/index';
+import ActionSheet from './components/actionsheet';
 
 const components = {
   Button,
   ButtonGroup: Button.group,
+  ActionSheet,
 };
 
 const install = (Vue) => {

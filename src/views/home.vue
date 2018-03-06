@@ -19,11 +19,44 @@
       <w-button @click="alert">alert</w-button>
       <w-button @click="confirm">confirm</w-button>
     </div>
+    <div class="section">
+      <w-button type="success" @click="actionSheetVisible1=true">有取消</w-button>
+      <w-button type="primary" @click="actionSheetVisible2=true">无取消</w-button>
+      <w-actionsheet
+        :item-list="itemList"
+        cancle="取消"
+        v-model="actionSheetVisible1"
+        header="这里是个标题"
+      ></w-actionsheet>
+      <w-actionsheet
+        :item-list="itemList"
+        v-model="actionSheetVisible2"
+      ></w-actionsheet>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      actionSheetVisible1: false,
+      actionSheetVisible2: false,
+      itemList: [
+        { text: '顺风车',
+          callBack: () => {
+            this.$modal.alert({
+              title: '提示',
+              content: '我是actionsheet弹出来的',
+            });
+          },
+        },
+        { text: '巴士', callBack: () => {} },
+        { text: '快车', callBack: () => {} },
+        { text: '专车', callBack: () => {} },
+      ],
+    };
+  },
   methods: {
     alert() {
       this.$modal.alert({

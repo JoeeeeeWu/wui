@@ -1,0 +1,76 @@
+.w__mask {
+  @include mask
+}
+
+.w__actionsheet {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zindex-popover;
+  background-color: #efeff4;
+  transform: translate(0, 100%);
+  transition: transform .3s;
+
+  &.w__actionsheet--active {
+      transform: translate(0, 0);
+  }
+
+  & header{
+      font-size: 1.3rem;
+      color: $text-color;
+      height: 40px;
+      line-height: 40px;
+      background-color: $body-background;
+  }
+
+  & ul {
+      margin: 0;
+      padding: 0;
+  }
+
+  & .w__actionsheet--item {
+      display: block;
+      position: relative;
+      font-size: $font-size-big;
+      color: $text-color;
+      height: 50px;
+      line-height: 50px;
+      background-color: $body-background;
+  }
+
+  & .w__actionsheet--item:after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: $border-width-default  $border-style-default  $border-color-base;
+      transform: scaleY(.5);
+      transform-origin: 0 0;
+  }
+
+  & .w__actionsheet--item:first-child:before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: $border-width-default  $border-style-default  $border-color-base;
+      transform: scaleY(.5);
+      transform-origin: 0 0;
+  }
+
+  & .w__actionsheet--action {
+      display: block;
+      margin-top: 10px;
+      font-size: $font-size-big;
+      color: $text-color;
+      height: 50px;
+      line-height: 50px;
+      background-color: $body-background;
+  }
+}
