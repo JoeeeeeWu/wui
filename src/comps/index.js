@@ -3,11 +3,13 @@ import './styles/index.scss';
 import Button from './components/button';
 import GlobalModal from './components/globalmodal/index';
 import ActionSheet from './components/actionsheet';
+import Navbar from './components/navbar';
 
 const components = {
   Button,
   ButtonGroup: Button.group,
   ActionSheet,
+  Navbar,
 };
 
 const install = (Vue) => {

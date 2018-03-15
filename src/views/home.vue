@@ -33,6 +33,16 @@
         v-model="actionSheetVisible2"
       ></w-actionsheet>
     </div>
+    <div class="section">
+      <w-navbar
+        title="首页文字很长很长很长啊啊啊啊啊"
+        left-text="返回"
+        left-icon="w__icon--left"
+        right-text="设置"
+        @leftClick="leftClick"
+        @rightClick="rightClick"
+      ></w-navbar>
+    </div>
   </div>
 </template>
 
@@ -69,6 +79,20 @@ export default {
       this.$modal.confirm({
         title: '提示',
         content: '你想怎么样呢？',
+        color: '#19be6b',
+      });
+    },
+    leftClick() {
+      this.$modal.alert({
+        title: '提示',
+        content: '点击了navbar左边',
+        color: '#19be6b',
+      });
+    },
+    rightClick() {
+      this.$modal.alert({
+        title: '提示',
+        content: '点击navbar了右边',
         color: '#19be6b',
       });
     },
