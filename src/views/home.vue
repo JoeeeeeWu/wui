@@ -43,6 +43,18 @@
         @rightClick="rightClick"
       ></w-navbar>
     </div>
+
+    <!-- tabs -->
+    <div class="md-example-child md-example-child-tabs md-example-child-tabs-0">
+      <md-tabs
+        :titles="titles"
+      >
+        <div v-for="(title, index) of titles" :key="index">
+          {{title}}的内容
+        </div>
+      </md-tabs>
+    </div>
+
   </div>
 </template>
 
@@ -52,6 +64,7 @@ export default {
     return {
       actionSheetVisible1: false,
       actionSheetVisible2: false,
+      titles: ['第一', '第二', '第三', '第四'],
       itemList: [
         { text: '顺风车',
           callBack: () => {

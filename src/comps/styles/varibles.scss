@@ -10,6 +10,8 @@ $error-color            : #ed3f14;
 $plain-color            : #fff;
 $transparent-color      : transparent;
 
+$tabs-color             : $primary-color;
+
 $link-color             : #2D8cF0;
 $link-hover-color       : tint($link-color, 20%);
 $link-active-color      : shade($link-color, 5%);

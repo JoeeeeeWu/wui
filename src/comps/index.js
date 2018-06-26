@@ -4,12 +4,14 @@ import Button from './components/button';
 import GlobalModal from './components/globalmodal/index';
 import ActionSheet from './components/actionsheet';
 import Navbar from './components/navbar';
+import Tabs from './components/tabs';
 
 const components = {
   Button,
   ButtonGroup: Button.group,
   ActionSheet,
   Navbar,
+  Tabs,
 };
 
 const install = (Vue) => {

@@ -1,0 +1,33 @@
+.md-tab-bar {
+  position: relative;
+  z-index: 10;
+  height: 30px;
+  font-size: 16px;
+  background: #fff;
+  .md-tab-titles-wrpper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .md-tab-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    &.active {
+      color: $tabs-color;
+    }
+  }
+  .ink-bar {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background: $tabs-color;
+    &.animate {
+      transition: left 0.3s;
+    }
+  }
+}
